@@ -12,12 +12,30 @@ public class CalcButton extends JButton  {
         controller = c;
         setFont(new Font("Arial", Font.BOLD, 28));
         setPreferredSize(new Dimension(50,50));
-        addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.onInput(getText());
-            }
-        });
+        if (text.equalsIgnoreCase("=")){
+            addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.onCalculate(getText());
+                }
+            });
+        }
+        else if (text.equalsIgnoreCase("C")){
+            addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.onClear();
+                }
+            });
+        }
+        else {
+            addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.onInput(getText());
+                }
+            });
+        }
     }
     public void setController(CalculatorController c) {
         controller = c;

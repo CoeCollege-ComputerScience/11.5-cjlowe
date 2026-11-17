@@ -19,7 +19,15 @@ public class CalculatorController {
     }
 
     // onCalculate
-
+    public void onCalculate(String input){
+        System.out.println(input);
+        String result = model.handleCompute(input);
+        view.show(result);
+    }
 
     // onClear
+    public void onClear(){
+        String result = model.handleClear();
+        view.show(result);
+    }
 }

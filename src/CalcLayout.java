@@ -26,12 +26,14 @@ public class CalcLayout extends JPanel{
 
         JPanel bp = new JPanel();
         bp.setLayout(new GridLayout(0,3));
-        numButtons = new CalcButton[10];
+        numButtons = new CalcButton[11];
         //TO DO:  Fix the order of the buttons
         for (int i = 0; i < 10; i ++){
             numButtons[i] = new CalcButton(Integer.toString(i), controller);
             bp.add(numButtons[i]);
         }
+        numButtons[10] = new CalcButton("C", controller);
+        bp.add(numButtons[10]);
         add(bp, BorderLayout.CENTER);
 
         JPanel op = new JPanel();

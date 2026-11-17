@@ -11,10 +11,11 @@ public class CalcModel {
         return inputString;
     }
 
-    //String handleCompute()
-    // Maybe this returns "42"
-
-    //String handleClear()
-    // Maybe this returns "42"
+    String handleCompute(String input){
+     return "42";
+}
+    String handleClear(){
+        return "0";
+    }
 
 }
